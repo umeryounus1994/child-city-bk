@@ -50,12 +50,12 @@ app.use("/stats", Stats);
 app.use((error, req, res, next) => {
   return res.status(500).json({ message: "Something went Wrong." });
 });
-const PORT = process.env.PORT || 6969;
+const PORT = process.env.PORT || 5000;
 // app.listen(PORT, () => {
 //   console.log("App listening on port", PORT);
 // });
 const MONGO_DB_URL = "mongodb+srv://mosama4u:eYDR3RhgRxOwKct9@cluster0.k4da7we.mongodb.net/";
 
 mongoose.connect(MONGO_DB_URL).then(() => {
-  app.listen(6969, () => console.log("We are live with DB (maybe)"));
+  app.listen(PORT, () => console.log("We are live with DB (maybe)"));
 });
